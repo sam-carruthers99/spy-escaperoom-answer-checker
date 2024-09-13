@@ -1,38 +1,69 @@
-.App {
+body {
+  background-color: #000; /* Black background */
+  color: #20af20; /* Green text */
+  font-family: 'Courier New', Courier, monospace; /* Spy-like font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.puzzle-container {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input.puzzle-input {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #20af20;
+  background-color: #000;
+  color: #20af20;
+  font-size: 24px;
+  text-align: center;
+  width: 50px;  /* Fixed width for square boxes */
+  height: 50px; /* Fixed height for square boxes */
+}
+
+input.traditional-input {
+  padding: 10px;
+  width: 50%;
+  border: 2px solid #20af20;
+  background-color: #000;
+  color: #20af20;
+  font-size: 18px;
+  text-align: center;
+}
+
+.navigation button, .hint-section button, button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid #20af20;
+  background-color: #000;
+  color: #20af20;
+  cursor: pointer;
+}
+
+.navigation button:hover, .hint-section button:hover {
+  background-color: #20af20;
+  color: #000;
+}
+
+.hint-text {
+  margin-top: 10px;
+  color: #ff0000; /* Optional red text for hints */
 }

@@ -164,7 +164,6 @@ const Puzzle = ({ puzzleNumber }) => {
           className="puzzle-input"
           onChange={(e) => handleInputChange(e, idx)}
           onKeyDown={(e) => handleKeyDown(e, idx)}
-          style={{ width: '50px', height: '50px' }} // Make input boxes square
         />
       ));
     }
@@ -175,6 +174,9 @@ const Puzzle = ({ puzzleNumber }) => {
       <h1>Puzzle #{puzzle.number}</h1>
       <div className="input-container">{renderInputBoxes()}</div>
         <button onClick={submitClicked}>Submit</button>
+
+        <hr className="line-break" style={{ width: '75%'}} />
+
       <div className="navigation">
         {puzzleNumber > 1 && (
           <Link to={`/${puzzleNumber - 1}`}>
@@ -187,6 +189,8 @@ const Puzzle = ({ puzzleNumber }) => {
           </Link>
         )}
       </div>
+
+    
 
       {/* Hint navigation */}
       <div className="hint-section">

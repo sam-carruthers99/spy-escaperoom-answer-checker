@@ -7,6 +7,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  padding: 0;
 }
 
 .puzzle-container {
@@ -24,7 +25,8 @@ body {
 .input-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 5px;
 }
 
 input.puzzle-input {
@@ -33,20 +35,10 @@ input.puzzle-input {
   border: 2px solid #20af20;
   background-color: #000;
   color: #20af20;
-  font-size: 24px;
+  font-size: 3vw; /* Use vw for dynamic font scaling */
   text-align: center;
-  width: 50px;  /* Fixed width for square boxes */
-  height: 50px; /* Fixed height for square boxes */
-}
-
-input.traditional-input {
-  padding: 10px;
-  width: 50%;
-  border: 2px solid #20af20;
-  background-color: #000;
-  color: #20af20;
-  font-size: 18px;
-  text-align: center;
+  width: 2vw;  /* Input box width is 10% of the viewport width */
+  height: 2vw; /* Input box height is also 10% of the viewport width */
 }
 
 .navigation button, .hint-section button, button {
@@ -63,8 +55,16 @@ input.traditional-input {
   color: #000;
 }
 
+.navigation {
+  margin-top: 30px;
+}
+
 .hint-text {
   margin-top: 10px;
   color: #ff0000; /* Optional red text for hints */
 }
 
+.line-break {
+  margin-top: 30px;
+  border-color: #20af20;
+}

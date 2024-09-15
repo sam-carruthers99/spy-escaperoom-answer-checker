@@ -13,18 +13,7 @@ const puzzleData = [
   { number: 8, solutionLength: 7, type: 'text' }, // Traditional input box
 ];
 
-// Example hint data with solution
-const hintsData = {
-    1: ['Hint 1 for puzzle 1', 'Hint 2 for puzzle 1', 'Hint 3 for puzzle 1', 'Solution for puzzle 1'],
-    2: ['Hint 1 for puzzle 2', 'Hint 2 for puzzle 2', 'Hint 3 for puzzle 2', 'Solution for puzzle 2'],
-    3: ['Hint 1 for puzzle 3', 'Hint 2 for puzzle 3', 'Hint 3 for puzzle 3', 'Solution for puzzle 3'],
-    4: ['Hint 1 for puzzle 4', 'Hint 2 for puzzle 4', 'Hint 3 for puzzle 4', 'Solution for puzzle 4'],
-    5: ['Hint 1 for puzzle 5', 'Hint 2 for puzzle 5', 'Hint 3 for puzzle 5', 'Solution for puzzle 5'],
-    6: ['Hint 1 for puzzle 6', 'Hint 2 for puzzle 6', 'Hint 3 for puzzle 6', 'Solution for puzzle 6'],
-    7: ['Hint 1 for puzzle 7', 'Hint 2 for puzzle 7', 'Hint 3 for puzzle 7', 'Solution for puzzle 7'],
-    8: ['Hint 1 for puzzle 8', 'Hint 2 for puzzle 8', 'Hint 3 for puzzle 8', 'Solution for puzzle 8'],
-    // Add similar entries for other puzzles
-};
+const { hintsData } = require('./hints.js')
 
 const puzzleSolution = {
     1: 'SAVE' ,

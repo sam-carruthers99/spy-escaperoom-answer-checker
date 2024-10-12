@@ -18,11 +18,11 @@ const { hintsData } = require('./hints.js')
 const puzzleSolution = {
     1: 'SAVE' ,
     2: 'NIGHTSHADE',
-    3: '1111' ,
-    4: 'SECURITY' ,
-    5: '2579' ,
-    6: 'STEALTH' ,
-    7: '495' ,
+    3: '495',
+    4: 'WORD',
+    5: 'SECURITY',
+    6: '2579' ,
+    7: 'STEALTH' ,
     8: 'DBRBL2247' 
 };
 

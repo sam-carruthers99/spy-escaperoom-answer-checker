@@ -29,7 +29,7 @@ const hintsData = {
     8: ['There are seven fake ID cards. None of them are the real one, but they all have some pieces of information that are correct.', 
         'For each characteristic, find the data that is found most on the seven cards.', 
         'Once all information has been gathered, construct the ID number based on the template.', 
-        'SBB6825'],
+        'DBRBL2247'],
 };
 
 module.exports = {hintsData}

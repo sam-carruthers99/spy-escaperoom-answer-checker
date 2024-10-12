@@ -23,7 +23,7 @@ const puzzleSolution = {
     5: '2579' ,
     6: 'STEALTH' ,
     7: '495' ,
-    8: 'SBB6825' 
+    8: 'DBRBL2247' 
 };
 
 

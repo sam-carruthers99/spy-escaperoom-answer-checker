@@ -20,7 +20,7 @@ const puzzleSolution = {
     2: 'NIGHTSHADE',
     3: '495',
     4: 'WORD',
-    5: 'SECURITY',
+    5: 'HACK',
     6: '2579' ,
     7: 'STEALTH' ,
     8: 'DBRBL2247' 

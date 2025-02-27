@@ -16,29 +16,24 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100%;
-  flex-direction: column;
 }
 
 .input-container {
   display: flex;
   justify-content: center;
-  /* margin-top: 20px; */
+  margin-top: 5px;
   margin-bottom: 5px;
 }
 
 input.puzzle-input {
-  margin: 5px;
+  margin: 2px;
   padding: 10px;
   border: 2px solid #20af20;
   background-color: #000;
   color: #20af20;
-  font-size: 3vw; /* Use vw for dynamic font scaling */
   text-align: center;
-  width: 2vw;  /* Input box width is 10% of the viewport width */
-  height: 2vw; /* Input box height is also 10% of the viewport width */
 }
 
 .navigation button, .hint-section button, button {
@@ -50,21 +45,123 @@ input.puzzle-input {
   cursor: pointer;
 }
 
+
+
 .navigation button:hover, .hint-section button:hover {
   background-color: #20af20;
   color: #000;
 }
 
 .navigation {
-  margin-top: 30px;
+  margin-top: 5vw
 }
 
 .hint-text {
-  margin-top: 10px;
+  margin: 10px;
+  padding: 10px;
   color: #ff0000; /* Optional red text for hints */
 }
 
 .line-break {
-  margin-top: 30px;
+  margin-top: 5vw;
   border-color: #20af20;
+}
+
+
+
+@media (max-width: 375px) {
+  /* Styles for small phones */
+  input.puzzle-input {
+    width: 1vw; /* Larger input boxes for small screens */
+    height: 1vw;
+    font-size: 2vw; /* Larger font size for better readability */
+    margin: 1px;
+  }
+  .navigation button, .hint-section button, button {
+    width: 27vw;
+    height: 8vw;
+    font-size: 2.4vw;
+    padding: 0px;
+    margin: 5px;
+  }
+  .puzzle-title {
+    font-size: 8vw;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 414px) {
+  /* Styles for medium-sized phones */
+  input.puzzle-input {
+    width: 1.5vw; /* Larger input boxes for small screens */
+    height: 1.5vw;
+    font-size: 2vw; /* Larger font size for better readability */
+  }
+  .navigation button, .hint-section button, button {
+    width: 25vw;
+    height: 8vw;
+    font-size: 2.2vw;
+    padding: 0px;
+    margin: 8px;
+  }
+  .puzzle-title {
+    font-size: 8vw;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 600px) {
+  /* Styles for larger phones */
+  input.puzzle-input {
+    width: 1.5vw; /* Larger input boxes for small screens */
+    height: 1.5vw;
+    font-size: 2vw; /* Larger font size for better readability */
+  }
+  .navigation button, .hint-section button, button {
+    width: 28vw;
+    height: 9vw;
+    font-size: 2vw;
+    padding: 0px;
+  }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  input.puzzle-input {
+    width: 3vw; /* Slightly smaller input boxes for medium screens */
+    height: 3vw;
+    font-size: 2vw;
+    margin: 4px;
+  }
+  .navigation button, .hint-section button, button {
+    width: 23vw;
+    height: 7vw;
+    font-size: 1.8vw;
+    padding: 2px;
+  }
+  .puzzle-title {
+    font-size: 7vw;
+  }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 1025px) {
+  input.puzzle-input {
+    width: 3vw; /* Smaller input boxes for large screens */
+    height: 3vw;
+    font-size: 2vw;
+    margin: 5px;
+  }
+  .navigation button, .hint-section button, button {
+    width: 18vw;
+    height: 5vw;
+    font-size: 1.5vw;
+    padding: 0px;
+  }
+  .puzzle-title {
+    font-size: 4vw;
+  }
+
+  .line-break {
+    /* margin-top: 2vw; */
+  }
+
 }

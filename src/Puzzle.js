@@ -160,7 +160,7 @@ const Puzzle = ({ puzzleNumber }) => {
 
   return (
     <div className="puzzle-container">
-      <h1>Puzzle #{puzzle.number}</h1>
+      <h1 className="puzzle-title">Puzzle #{puzzle.number}</h1>
       <div className="input-container">{renderInputBoxes()}</div>
         <button onClick={submitClicked}>Submit</button>
 

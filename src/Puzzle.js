@@ -5,12 +5,12 @@ import { useEffect } from 'react';
 const puzzleData = [
   { number: 1, solutionLength: 4, type: 'text' },
   { number: 2, solutionLength: 10, type: 'text' },
-  { number: 3, solutionLength: 3, type: 'text' },
+  { number: 3, solutionLength: 4, type: 'text' },
   { number: 4, solutionLength: 4, type: 'text' },
-  { number: 5, solutionLength: 4, type: 'text' },
+  { number: 5, solutionLength: 9, type: 'text' },
   { number: 6, solutionLength: 4, type: 'text' },
-  { number: 7, solutionLength: 7, type: 'text' },
-  { number: 8, solutionLength: 9, type: 'text' }, // Traditional input box
+  { number: 7, solutionLength: 3, type: 'text' },
+  { number: 8, solutionLength: 7, type: 'text' }, // Traditional input box
 ];
 
 const { hintsData } = require('./hints.js')
@@ -18,12 +18,12 @@ const { hintsData } = require('./hints.js')
 const puzzleSolution = {
     1: 'SAVE' ,
     2: 'NIGHTSHADE',
-    3: '495',
+    3: '2579',
     4: 'WORD',
-    5: 'HACK',
-    6: '2579' ,
-    7: 'STEALTH' ,
-    8: 'DBRBL2247' 
+    5: 'DBRBL2247',
+    6: 'HACK',
+    7: '495',
+    8: 'STEALTH'
 };
 
 

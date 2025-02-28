@@ -53,7 +53,7 @@ input.puzzle-input {
 }
 
 .navigation {
-  margin-top: 5vw
+  /* margin-top: 5vw */
 }
 
 .hint-text {
@@ -63,7 +63,8 @@ input.puzzle-input {
 }
 
 .line-break {
-  margin-top: 5vw;
+  /* margin-top: 5vw; */
+  margin: 2vw;
   border-color: #20af20;
 }
 
@@ -82,11 +83,16 @@ input.puzzle-input {
     height: 8vw;
     font-size: 2.4vw;
     padding: 0px;
-    margin: 5px;
+    margin: 3px;
   }
   .puzzle-title {
     font-size: 8vw;
   }
+
+  .line-break {
+    margin: 5vw;
+  }
+
 }
 
 @media (min-width: 376px) and (max-width: 414px) {
@@ -101,11 +107,16 @@ input.puzzle-input {
     height: 8vw;
     font-size: 2.2vw;
     padding: 0px;
-    margin: 8px;
+    margin: 4px;
   }
   .puzzle-title {
     font-size: 8vw;
   }
+
+  .line-break {
+    margin: 5vw;
+  }
+
 }
 
 @media (min-width: 415px) and (max-width: 600px) {
@@ -116,11 +127,17 @@ input.puzzle-input {
     font-size: 2vw; /* Larger font size for better readability */
   }
   .navigation button, .hint-section button, button {
-    width: 28vw;
-    height: 9vw;
+    width: 26vw;
+    height: 8vw;
     font-size: 2vw;
     padding: 0px;
+    margin: 5px;
   }
+
+  .line-break {
+    margin: 5vw;
+  }
+
 }
 
 /* Medium screens (e.g., tablets) */
@@ -132,13 +149,13 @@ input.puzzle-input {
     margin: 4px;
   }
   .navigation button, .hint-section button, button {
-    width: 23vw;
-    height: 7vw;
-    font-size: 1.8vw;
+    width: 15vw;
+    height: 5vw;
+    font-size: 1.3vw;
     padding: 2px;
   }
   .puzzle-title {
-    font-size: 7vw;
+    font-size: 5vw;
   }
 }
 
@@ -147,17 +164,17 @@ input.puzzle-input {
   input.puzzle-input {
     width: 3vw; /* Smaller input boxes for large screens */
     height: 3vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: 5px;
   }
   .navigation button, .hint-section button, button {
-    width: 18vw;
-    height: 5vw;
-    font-size: 1.5vw;
+    width: 10vw;
+    height: 3vw;
+    font-size: .9vw;
     padding: 0px;
   }
   .puzzle-title {
-    font-size: 4vw;
+    font-size: 2.8vw;
   }
 
   .line-break {

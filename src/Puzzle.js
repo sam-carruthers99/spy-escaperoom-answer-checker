@@ -7,20 +7,21 @@ const puzzleData = [
   { number: 2, solutionLength: 10, type: 'text' },
   { number: 3, solutionLength: 4, type: 'text' },
   { number: 4, solutionLength: 4, type: 'text' },
-  { number: 5, solutionLength: 9, type: 'text' },
+  { number: 5, solutionLength: 8, type: 'text' },
   { number: 6, solutionLength: 4, type: 'text' },
   { number: 7, solutionLength: 3, type: 'text' },
   { number: 8, solutionLength: 7, type: 'text' }, // Traditional input box
 ];
 
 const { hintsData } = require('./hints.js')
+const { puzzleStoryContent } = require('./story.js')
 
 const puzzleSolution = {
     1: 'SAVE' ,
     2: 'NIGHTSHADE',
     3: '2579',
-    4: 'WORD',
-    5: 'DBRBL2247',
+    4: 'GEAR',
+    5: 'WBRBL247',
     6: 'HACK',
     7: '495',
     8: 'STEALTH'
@@ -29,8 +30,6 @@ const puzzleSolution = {
 
 const Puzzle = ({ puzzleNumber }) => {
 
-    
-    
     useEffect(() => {
         // Clear all input boxes when puzzleNumber changes
         inputRefs.current.forEach(input => {
@@ -78,19 +77,12 @@ const Puzzle = ({ puzzleNumber }) => {
             .join('');
         var solutionLower = inputs.toUpperCase();
         if (solutionLower === puzzleSolution[puzzleNumber]) {
-            if (puzzleNumber < 8) {
+            if (puzzleNumber <= 8) {
                 // Create a popup element
                 const popup = document.createElement('div');
-                popup.style.position = 'fixed';
-                popup.style.top = '50%';
-                popup.style.left = '50%';
-                popup.style.transform = 'translate(-50%, -50%)';
-                popup.style.padding = '20px';
-                popup.style.backgroundColor = 'white';
-                popup.style.border = '2px solid green';
-                popup.style.zIndex = '1000';
+                popup.className = 'popup-container'
                 popup.innerHTML = `
-                    <p>Correct! You can now access the contents of the next puzzle.</p>
+                    <p className="popup-story">${puzzleStoryContent[puzzleNumber]}</p>
                     <button id="popup-ok-button" style="display: block; margin: 0 auto;">Ok</button>
                 `;
 
@@ -100,7 +92,9 @@ const Puzzle = ({ puzzleNumber }) => {
                 // Add event listener to the button to remove the popup and navigate to the next puzzle
                 document.getElementById('popup-ok-button').addEventListener('click', () => {
                     document.body.removeChild(popup);
-                    window.location.href = `/${puzzleNumber + 1}`;
+                    if (puzzleNumber < 8){
+                      window.location.href = `/${puzzleNumber + 1}`;
+                    }
                 });
 
             } else {
@@ -160,7 +154,7 @@ const Puzzle = ({ puzzleNumber }) => {
 
   return (
     <div className="puzzle-container">
-      <h1 className="puzzle-title">Puzzle #{puzzle.number}</h1>
+      <h1 className="puzzle-title">Mission Objective #{puzzle.number}</h1>
       <div className="input-container">{renderInputBoxes()}</div>
         <button onClick={submitClicked}>Submit</button>
 

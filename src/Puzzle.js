@@ -51,7 +51,7 @@ const Puzzle = ({ puzzleNumber }) => {
 
     const handleKeyDown = (e, idx) => {
         const value = e.target.value;
-        if (e.key === 'Backspace' && e.target.value === '' && idx > 0) {
+        if (e.key === 'Backspace' && value === '' && idx > 0) {
             inputRefs.current[idx - 1].focus(); // Move focus to previous box
         }
     }
@@ -80,7 +80,7 @@ const Puzzle = ({ puzzleNumber }) => {
             if (puzzleNumber <= 8) {
                 // Create a popup element
                 const popup = document.createElement('div');
-                popup.className = 'popup-container'
+                popup.className = 'popup-container';
                 popup.innerHTML = `
                     <p className="popup-story">${puzzleStoryContent[puzzleNumber]}</p>
                     <button id="popup-ok-button" style="display: block; margin: 0 auto;">Ok</button>
@@ -103,16 +103,7 @@ const Puzzle = ({ puzzleNumber }) => {
         } else {
             // Create a popup element
             const popup = document.createElement('div');
-            popup.style.color = 'red';
-            
-            popup.style.position = 'fixed';
-            popup.style.top = '50%';
-            popup.style.left = '50%';
-            popup.style.transform = 'translate(-50%, -50%)';
-            popup.style.padding = '20px';
-            popup.style.backgroundColor = 'white';
-            popup.style.border = '2px solid red';
-            popup.style.zIndex = '1000';
+            popup.className = 'incorrect-popup-container';
             popup.innerHTML = `
                 <p>Incorrect, try again.</p>
                 <button id="popup-try-again-button" style="display: block; margin: 0 auto; color: red; border-color: red;">Ok</button>

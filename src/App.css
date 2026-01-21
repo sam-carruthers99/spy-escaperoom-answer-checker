@@ -47,8 +47,6 @@ input.puzzle-input {
   cursor: pointer;
 }
 
-
-
 .navigation button:hover, .hint-section button:hover {
   background-color: #20af20;
   color: #000;
@@ -103,9 +101,6 @@ input.puzzle-input {
   border-color: #20af20;
 }
 
-
-
-
 @media (max-width: 375px) {
   /* Styles for small phones */
   input.puzzle-input {
@@ -129,6 +124,15 @@ input.puzzle-input {
     margin: 5vw;
   }
 
+  .popup-container {
+    padding: 15px;
+    max-width: 95%;
+    max-height: 85vh;
+    min-width: 80%; /* Add this to ensure minimum width */
+    width: auto; /* Allow it to grow with content */
+  }
+
+
 }
 
 @media (min-width: 376px) and (max-width: 414px) {
@@ -151,6 +155,14 @@ input.puzzle-input {
 
   .line-break {
     margin: 5vw;
+  }
+
+  .popup-container {
+    padding: 15px;
+    max-width: 95%;
+    max-height: 85vh;
+    min-width: 80%; /* Add this to ensure minimum width */
+    width: auto; /* Allow it to grow with content */
   }
 
 }

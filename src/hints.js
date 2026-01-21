@@ -19,7 +19,7 @@ const hintsData = {
     5: ['There are seven fake ID cards. None of them are the real one, but they all have some pieces of information that are correct.', 
         'For each characteristic, find the data that is found most on the seven cards.', 
         'Once all of the highest frequency information has been gathered, construct the ID number based on the example template.', 
-        'DBRBL247'],
+        'WBRBL247'],
     6: ['Find the four sets of phrases that represent the two acronyms.', 
         'For each phrase, one word in the acronym does not match. Fill in the letter that doesn\'t match for each one.', 
         'The different paths show the translation between pairs of letters. Use the paths to translate the letters "OEUI".', 

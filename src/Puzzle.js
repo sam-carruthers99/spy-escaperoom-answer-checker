@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+// import './App.css';
 
 const puzzleData = [
   { number: 1, solutionLength: 4, type: 'text' },
@@ -19,9 +20,9 @@ const { puzzleStoryContent } = require('./story.js')
 const puzzleSolution = {
     1: 'SAVE' ,
     2: 'NIGHTSHADE',
-    3: '2579',
+    3: '5729',
     4: 'GEAR',
-    5: 'WBRBL247',
+    5: 'WBLBR247',
     6: 'HACK',
     7: '495',
     8: 'STEALTH'
@@ -36,7 +37,10 @@ const Puzzle = ({ puzzleNumber }) => {
             if (input) input.value = '';
         });
     }, [puzzleNumber]);
-    
+
+    const [popupType, setPopupType] = useState(null);
+    // null | "correct" | "incorrect"
+
     const [currentHintIndex, setCurrentHintIndex] = useState(0);
     const [hintVisible, setHintVisible] = useState(false);
     const puzzleHints = hintsData[puzzleNumber] || [];
@@ -69,61 +73,26 @@ const Puzzle = ({ puzzleNumber }) => {
         setHintVisible(false);
     }
     
-    const submitClicked = () => { 
-        // Get the input from the separate input boxes
-        const inputs = inputRefs.current
-            .filter(input => input !== null && input !== undefined)
-            .map(input => input.value)
-            .join('');
-        var solutionLower = inputs.toUpperCase();
-        if (solutionLower === puzzleSolution[puzzleNumber]) {
-            if (puzzleNumber <= 8) {
-                // Create a popup element
-                const popup = document.createElement('div');
-                popup.className = 'popup-container';
-                popup.innerHTML = `
-                    <p className="popup-story">${puzzleStoryContent[puzzleNumber]}</p>
-                    <button id="popup-ok-button" style="display: block; margin: 0 auto;">Ok</button>
-                `;
+    const submitClicked = () => {
+    const inputs = inputRefs.current
+        .filter(input => input !== null && input !== undefined)
+        .map(input => input.value)
+        .join('');
 
-                // Append the popup to the body
-                document.body.appendChild(popup);
+    const solutionUpper = inputs.toUpperCase();
 
-                // Add event listener to the button to remove the popup and navigate to the next puzzle
-                document.getElementById('popup-ok-button').addEventListener('click', () => {
-                    document.body.removeChild(popup);
-                    if (puzzleNumber < 8){
-                      window.location.href = `/${puzzleNumber + 1}`;
-                    }
-                });
+    if (solutionUpper === puzzleSolution[puzzleNumber]) {
+        setPopupType("correct");
+    } else {
+        setPopupType("incorrect");
 
-            } else {
-                alert('Congratulations! You have completed all puzzles.');
-            }
-        } else {
-            // Create a popup element
-            const popup = document.createElement('div');
-            popup.className = 'incorrect-popup-container';
-            popup.innerHTML = `
-                <p>Incorrect, try again.</p>
-                <button id="popup-try-again-button" style="display: block; margin: 0 auto; color: red; border-color: red;">Ok</button>
-            `;
-
-            // Append the popup to the body
-            document.body.appendChild(popup);
-
-            // Add event listener to the button to remove the popup
-            document.getElementById('popup-try-again-button').addEventListener('click', () => {
-                document.body.removeChild(popup);
-            });
-
-
-            inputRefs.current.forEach(input => {
-                if (input) input.value = '';
-            });
-
-        }
+        // Clear inputs
+        inputRefs.current.forEach(input => {
+            if (input) input.value = '';
+        });
     }
+};
+
 
   const renderInputBoxes = () => {
     if (puzzle.type === 'traditional') {
@@ -194,6 +163,38 @@ const Puzzle = ({ puzzleNumber }) => {
                 {/* Display the current hint */}
                 {hintVisible && <p className="hint-text">{puzzleHints[currentHintIndex]}</p>}
         </div>
+        {/* Correct Popup */}
+        {popupType === "correct" && (
+            <div className="popup-container">
+                <p className="popup-story">
+                    {puzzleStoryContent[puzzleNumber]}
+                </p>
+
+                <button
+                    onClick={() => {
+                        setPopupType(null);
+                        if (puzzleNumber < 8) {
+                            window.location.href = `/${puzzleNumber + 1}`;
+                        }
+                    }}
+                >
+                    Ok
+                </button>
+            </div>
+        )}
+
+        {/* Incorrect Popup */}
+        {popupType === "incorrect" && (
+            <div className="incorrect-popup-container">
+                <p>Incorrect, try again.</p>
+                <button
+                    onClick={() => setPopupType(null)}
+                    style={{ display: "block", margin: "0 auto", color: "red", borderColor: "red" }}
+                >
+                    Ok
+                </button>
+            </div>
+        )}
     </div>
   );
 };

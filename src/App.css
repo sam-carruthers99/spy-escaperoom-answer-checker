@@ -85,8 +85,7 @@ input.puzzle-input {
 }
 
 .popup-story {
-  /* font-size: 1vw; */
-  color: red;
+  white-space: pre-line;
 }
 
 .hint-text {
@@ -131,7 +130,6 @@ input.puzzle-input {
     min-width: 80%; /* Add this to ensure minimum width */
     width: auto; /* Allow it to grow with content */
   }
-
 
 }
 

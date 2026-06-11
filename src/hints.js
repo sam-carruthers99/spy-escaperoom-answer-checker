@@ -26,7 +26,7 @@ const hintsData = {
         'HACK'],
     7: ['There are three sets of circles that will be used together for three translations.', 
         'The first circle type is the pattern above the letters "NHUQ". One circle has five inputs, one has six inputs, and one has seven.',
-        'Once the ricles are placed in the correct positions, tranlsate each set of four letters by following the path from left to right.', 
+        'Once the circles are placed in the correct positions, translate each set of four letters by following the path from left to right.', 
         '495'],
     8: ['The arcs on the sheet will show you the path to take, starting at the letter "s".', 
         'Follow the exact path of each segment, jumping from letter to letter in order to spell out a word.', 

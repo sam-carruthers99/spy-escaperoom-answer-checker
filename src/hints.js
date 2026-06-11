@@ -7,7 +7,7 @@ const hintsData = {
     2: ['Find a valid placement for each of the four tiles on the letter grid. Only one placement is valid for each.', 
         'Reorder the letters in order of the numbers on the tiles to form words.', 
         'Recombine the formed words on another sheet to form a final word. Some letters are given already to help find the correct position.', 
-        'NIGHTSHADE'],
+        'HUNT'],
     3: ['Find the position for each word in the strings of Cs and Vs.', 
         '"C" stand for Consonant and "V" stands for Vowel.', 
         'Pay attention only to the underlined parts of each word.', 

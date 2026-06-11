@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 const puzzleData = [
   { number: 1, solutionLength: 4, type: 'text' },
-  { number: 2, solutionLength: 10, type: 'text' },
+  { number: 2, solutionLength: 4, type: 'text' },
   { number: 3, solutionLength: 4, type: 'text' },
   { number: 4, solutionLength: 4, type: 'text' },
   { number: 5, solutionLength: 8, type: 'text' },
@@ -19,7 +19,7 @@ const { puzzleStoryContent } = require('./story.js')
 
 const puzzleSolution = {
     1: 'SAVE' ,
-    2: 'NIGHTSHADE',
+    2: 'HUNT',
     3: '5729',
     4: 'GEAR',
     5: 'WBLBR247',
